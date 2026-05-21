@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f7f4ed;
+  --bg-alt: #fbfaf5;
+  --bg-elevated: #ffffff;
+  --text: #0d1f17;
+  --text-muted: #5e6b62;
+  --text-soft: #8a8a7a;
+  --primary: #1f4d3a;
+  --primary-hover: #2d6a4f;
+  --accent: #d4a93a;
+  --accent-hover: #b8902a;
+  --border: #d8d3c4;
+  --border-soft: #e8e3d4;
+  --selection: rgba(31, 77, 58, 0.18);
+}
+
+.dark {
+  --bg: #0a1410;
+  --bg-alt: #050a08;
+  --bg-elevated: #143426;
+  --text: #f0ebde;
+  --text-muted: #a8b3ad;
+  --text-soft: #6e7872;
+  --primary: #5fa37c;
+  --primary-hover: #7cb594;
+  --accent: #e6c068;
+  --accent-hover: #f4d88a;
+  --border: #1f2a23;
+  --border-soft: #143426;
+  --selection: rgba(95, 163, 124, 0.25);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: var(--selection);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-soft); }
+
+@layer components {
+  .container-x {
+    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono), monospace;
+    @apply text-xs uppercase tracking-[0.22em] font-medium;
+    color: var(--accent);
+  }
+
+  .display {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-variation-settings: 'opsz' 144, 'SOFT' 50;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide rounded-full transition-all duration-300;
+    background: var(--primary);
+    color: #f7f4ed;
+  }
+  .btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px -10px rgba(31, 77, 58, 0.35);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide rounded-full transition-all duration-300 border;
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .btn-ghost:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -24px rgba(13, 31, 23, 0.18);
+  }
+
+  .grain-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  .topo-bg {
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(31, 77, 58, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(212, 169, 58, 0.05) 0%, transparent 50%);
+  }
+  .dark .topo-bg {
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(95, 163, 124, 0.07) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(230, 192, 104, 0.05) 0%, transparent 50%);
+  }
+}
+
+/* Hide content for reveal animations until JS hydration */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+}

@@ -1,0 +1,34 @@
+// Site-wide configuration — edit this file to update the org's identity globally.
+export const siteConfig = {
+  name: 'Ecobridge',
+  tagline: 'Bridging youth, science, and the planet.',
+  description:
+    'Ecobridge is a youth-driven environmental and sustainability organization in Uganda, advancing climate action, green innovation, and community impact across Kampala and beyond.',
+  url: 'https://ecobridge.org',
+  email: 'hello@ecobridge.org',
+  phone: '+256 700 000 000',
+  address: 'Kampala, Uganda',
+  founded: 2022,
+  social: {
+    twitter: 'https://twitter.com/ecobridge',
+    instagram: 'https://instagram.com/ecobridge',
+    linkedin: 'https://linkedin.com/company/ecobridge',
+    facebook: 'https://facebook.com/ecobridge',
+    youtube: 'https://youtube.com/@ecobridge',
+  },
+  nav: [
+    { label: 'About', href: '/about' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Research', href: '/research' },
+    { label: 'Community', href: '/community' },
+    { label: 'Journal', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
+  ],
+};
+
+export const heroStats = [
+  { value: 12500, suffix: '+', label: 'Youth engaged' },
+  { value: 48, suffix: '', label: 'Active projects' },
+  { value: 215, suffix: ' t', label: 'Waste diverted' },
+  { value: 9, suffix: '', label: 'Districts served' },
+];
