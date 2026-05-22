@@ -4,14 +4,14 @@ export const siteConfig = {
   tagline: 'Bridging youth, science, and the planet.',
   description:
     'Ecobridge is a youth-driven environmental and sustainability organization in Uganda, advancing climate action, green innovation, and community impact across Kampala and beyond.',
-  url: 'https://ecobridge.org',
-  email: 'hello@ecobridge.org',
+  url: 'https://ecobridge-kawempe.vercel.app',
+  email: 'ecobridgekawempeofficial@gmail.com',
   phone: '+256 773606285',
   address: 'Kawempe Kampala Uganda',
   founded: 2025,
   social: {
-    twitter: 'https://twitter.com/ecobridge',
-    instagram: 'https://instagram.com/ecobridge',
+    twitter: 'https://twitter.com/EcobridgeO',
+    instagram: 'https://instagram.com/ecobridgekawempeofficial',
     linkedin: 'https://linkedin.com/company/ecobridge',
     facebook: 'https://facebook.com/ecobridge',
     youtube: 'https://youtube.com/@ecobridge',
